@@ -149,7 +149,106 @@
         .user-list li { display: flex; align-items: center; padding: 10px 15px; justify-content: space-between; border-bottom: 1px solid #f0f0f0;}
         .user-list-info { display: flex; align-items: center; gap: 10px; cursor: pointer; }
         .btn-small { padding: 5px 10px; border: 1px solid var(--border); background: white; border-radius: 4px; font-weight: 600; font-size: 12px; cursor: pointer; }
+	
+/* --- RESPONSIVE MOBILE (Ajouter à la fin du CSS) --- */
+@media screen and (max-width: 768px) {
+    
+    /* Ajustement du conteneur principal */
+    .container {
+        padding: 15px 10px;
+        width: 100%;
+        box-sizing: border-box;
+    }
 
+    /* --- HEADER PROFIL --- */
+    header {
+        flex-direction: column; /* Empiler la photo et les infos */
+        align-items: center;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .pfp {
+        margin-right: 0;
+        margin-bottom: 15px;
+        width: 100px; /* Photo plus petite */
+        height: 100px;
+    }
+
+    .user-info {
+        width: 100%;
+    }
+
+    .user-info h2 {
+        display: block;
+        margin-right: 0;
+        margin-bottom: 10px;
+        font-size: 24px;
+    }
+
+    /* Cible la div qui contient le nom et le bouton */
+    .user-info > div {
+        flex-direction: column;
+        gap: 10px;
+        margin-bottom: 15px !important;
+    }
+
+    /* Statistiques plus compactes */
+    .stats {
+        justify-content: center;
+        gap: 20px;
+        padding: 0;
+        font-size: 14px;
+    }
+
+    .stats li {
+        flex-direction: column; /* Chiffre au-dessus du texte */
+        align-items: center;
+    }
+
+    /* --- GRILLE PHOTOS --- */
+    .grid {
+        gap: 3px; /* Espacement réduit style mobile */
+    }
+
+    /* --- MODALE PHOTO (Le plus important) --- */
+    .modal-content-photo {
+        flex-direction: column; /* Image en haut, commentaires en bas */
+        width: 95%; /* Prend toute la largeur */
+        height: 85vh; /* Hauteur max de l'écran */
+        max-width: none;
+    }
+
+    .modal-img {
+        flex: none; /* Ne pas étirer n'importe comment */
+        width: 100%;
+        height: 50%; /* L'image prend la moitié haute */
+        background: black;
+    }
+
+    .modal-side {
+        width: 100%;
+        height: 50%; /* Les commentaires prennent la moitié basse */
+        border-left: none;
+        border-top: 1px solid var(--border);
+    }
+    
+    /* Flèches de navigation repositionnées */
+    .nav-arrow {
+        width: 30px; 
+        height: 30px;
+        font-size: 14px;
+        background: rgba(255, 255, 255, 0.6);
+    }
+    .prev-arrow { left: 5px; }
+    .next-arrow { right: 5px; }
+
+    /* --- MODALES LISTES (Abonnés) --- */
+    .modal-content-list {
+        width: 90%; /* Plus large sur mobile */
+        max-height: 80vh;
+    }
+}
     </style>
 </head>
 <body>
